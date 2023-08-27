@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Cocktail Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand handPointer" onclick="window.location.href='/'">Cocktail Recipes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <form class="d-flex" method="post">
+          <input class="form-control me-2" name="drinkName" type="search" placeholder="Drink Name" aria-label="Search">
+          <button class="btn btn-light" onclick="window.location.href='/search'" formaction="/search" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    </nav>
+
+    <main class="container">
+    <% if(locals.recipes){ %>
+    <% for(let i=0;i<recipes.length;i++){%>
+    <div class="p-5 rounded">
+      <h1><%= recipes[i].strDrink %></h1>
+      <div class="row">
+        <div class="col-5">
+          <img src="<%= recipes[i].strDrinkThumb %>" height="400px"/>
+        </div>
+        <div class="col-3">
+          <h2>Ingredients</h2>
+          <% if(recipes[i].strMeasure1!==null){ %>
+          <p><%= recipes[i].strMeasure1 %> <% } if(recipes[i].strIngredient1!==null){ %><%= recipes[i].strIngredient1 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure2!==null){ %>
+          <p><%= recipes[i].strMeasure2 %> <% } if(recipes[i].strIngredient2!==null){ %><%= recipes[i].strIngredient2 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure3!==null){ %>
+          <p><%= recipes[i].strMeasure3 %> <% } if(recipes[i].strIngredient3!==null){ %><%= recipes[i].strIngredient3 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure4!==null){ %>
+          <p><%= recipes[i].strMeasure4 %> <% } if(recipes[i].strIngredient4!==null){ %><%= recipes[i].strIngredient4 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure5!==null){ %>
+          <p><%= recipes[i].strMeasure5 %> <% } if(recipes[i].strIngredient5!==null){ %><%= recipes[i].strIngredient5 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure6!==null){ %>
+          <p><%= recipes[i].strMeasure6 %> <% } if(recipes[i].strIngredient6!==null){ %><%= recipes[i].strIngredient6 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure7!==null){ %>
+          <p><%= recipes[i].strMeasure7 %> <% } if(recipes[i].strIngredient7!==null){ %><%= recipes[i].strIngredient7 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure8!==null){ %>
+          <p><%= recipes[i].strMeasure8 %> <% } if(recipes[i].strIngredient8!==null){ %><%= recipes[i].strIngredient8 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure9!==null){ %>
+          <p><%= recipes[i].strMeasure9 %> <% } if(recipes[i].strIngredient9!==null){ %><%= recipes[i].strIngredient9 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure10!==null){ %>
+          <p><%= recipes[i].strMeasure10 %> <% } if(recipes[i].strIngredient10!==null){ %><%= recipes[i].strIngredient10 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure11!==null){ %>
+          <p><%= recipes[i].strMeasure11 %> <% } if(recipes[i].strIngredient11!==null){ %><%= recipes[i].strIngredient11 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure12!==null){ %>
+          <p><%= recipes[i].strMeasure12 %> <% } if(recipes[i].strIngredient12!==null){ %><%= recipes[i].strIngredient12 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure13!==null){ %>
+          <p><%= recipes[i].strMeasure13 %> <% } if(recipes[i].strIngredient13!==null){ %><%= recipes[i].strIngredient13 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure14!==null){ %>
+          <p><%= recipes[i].strMeasure14 %> <% } if(recipes[i].strIngredient14!==null){ %><%= recipes[i].strIngredient14 %></p>
+          <% } %>
+          <% if(recipes[i].strMeasure15!==null){ %>
+          <p><%= recipes[i].strMeasure15 %> <% } if(recipes[i].strIngredient15!==null){ %><%= recipes[i].strIngredient15 %></p>
+          <% } %>
+
+          <h4>Glass</h4>
+          <p>Serve: <%= recipes[i].strGlass %></p>
+        </div>
+        <div class="col-4">
+          <h2>Instructions</h2>
+          <% const instrArray = recipes[i].strInstructions.split("."); %>
+          <% instrArray.forEach(inst => { %>
+          <p><%= inst.trim()+"." %></p>
+          <% }); %>
+          <p></p>
+          <h4>Category </h4><p><%= recipes[i].strCategory %></p>
+          
+          <h4>Type </h4><p><%= recipes[i].strAlcoholic %></p>
+          
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <% } else { %>
+      <h2 class="errorMsg">No results found for your search, Please try different drink names.</h2>
+    <% } %>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+
+</html>

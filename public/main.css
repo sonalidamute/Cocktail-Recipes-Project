@@ -1,0 +1,53 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #461d5c;
+    }
+
+    .container {
+      margin: 75px 50px 50px 50px;
+    }
+
+    .container div{
+      background-color: #ddcde7;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+      color: #6d0ee5;
+    }
+
+    h2 {
+      color: #932e93;
+    }
+
+    .errorMsg {
+      color: whitesmoke;
+    }
+
+    h4 {
+      color: #932e93;
+    }
+
+    p {
+      color: #49006f;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .btnMargin {
+      margin-left: 10px;
+    }
+
+    .handPointer {
+      cursor: pointer;
+    }
+
+
+
+    
